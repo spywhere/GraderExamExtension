@@ -1,11 +1,11 @@
 function unlock_mode() {
-    var adminKey = document.getElementById("adminkey").value;
+    var adminkey = document.getElementById("adminkey").value;
 
     chrome.storage.sync.get({
-        adminKey: "grader@exam",
+        adminkey: "grader@exam",
         enabled: true
     }, function(items) {
-        if(adminKey != items.adminKey){
+        if(adminkey != items.adminkey){
             var status = document.getElementById("status");
             status.textContent = "Invalid";
             setTimeout(function() {
@@ -24,9 +24,12 @@ function unlock_mode() {
 function show_status() {
     chrome.storage.sync.get({enabled: true}, function(items) {
         var status = document.getElementById("status");
+        var button = document.getElementById("unlock");
         if(items.enabled){
+            button.textContent = "Unlock";
             status.textContent = "Enabled";
         }else{
+            button.textContent = "Lock";
             status.textContent = "Disabled";
         }
         setTimeout(function() {

@@ -6,7 +6,9 @@
 		chrome.tabs.query({"currentWindow": true}, function(tabs){
 			for(var i=0;i<tabs.length;i++){
 				var url = tabs[i].url;
-				if(!url.match(patterns)){
+				var isChrome = url.match("^chrome://");
+				var isExtension = url.match("^chrome://extensions");
+				if((!isChrome && !url.match(patterns)) || (isExtension && !url.match(patterns))){
 					chrome.tabs.remove(tabs[i].id);
 					evaluateTabs(patterns);
 					return;

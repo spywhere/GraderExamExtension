@@ -4,6 +4,12 @@
 	"description": "CafeGrader examination mode",
 	"version": "1.0",
 	"permissions": ["storage", "tabs", "*://*/*"],
+	"icons": {
+		"19": "ku_19.png",
+		"38": "ku_38.png",
+		"48": "ku_48.png",
+		"128": "ku_128.png"
+	},
 	"options_ui": {
 		"page": "options.html",
 		"chrome_style": true
@@ -16,7 +22,9 @@
 	"browser_action": {
 		"default_icon": {
 			"19": "ku_19.png",
-			"38": "ku_38.png"
+			"38": "ku_38.png",
+			"48": "ku_48.png",
+			"128": "ku_128.png"
 		},
 		"default_title": "CafeGrader Examination",
 		"default_popup": "popup.html"
