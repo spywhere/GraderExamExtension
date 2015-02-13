@@ -34,7 +34,7 @@ function save_options() {
 
 function restore_options() {
     chrome.storage.sync.get({
-        patterns: "https?://(((www|login[^\\.])\\.)?(grader\\.)?(eng\\.)?(src\\.)?ku\\.ac\\.th|((docs|drive)\\.)google).*|.*\\.pdf"
+        patterns: "https?://(((www|login[^\\.])\\.)?(grader\\.)?(eng\\.)?(src\\.)?ku\\.ac\\.th|((docs|drive)\\.)google).*|.*\\.pdf",
         // patterns: ".*",
         enabled: true
     }, function(items) {
